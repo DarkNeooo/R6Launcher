@@ -166,7 +166,7 @@ public class Controller {
                             new BufferedReader(new InputStreamReader(p.getInputStream()));
 
                     while ((line = input.readLine()) != null) {
-                        if (line.contains("notepad.exe")) {
+                        if (line.contains("RainbowSix_BE.exe")) {
                             isRunning.set(true);
                             break;
                         }
@@ -192,8 +192,8 @@ public class Controller {
     public void playBtnReleased(MouseEvent mouseEvent) throws IOException {
 
         if (settings.getGamePath() != null && settings.getGamePath().contains("RainbowSix.exe")) {
-            //Process process = new ProcessBuilder(settings.getGamePath()).start();
-            //System.exit(0);
+            Process process = new ProcessBuilder(settings.getGamePath()).start();
+            System.exit(0);
         }
     }
 

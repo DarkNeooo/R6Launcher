@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="launcher.Controller">
+   <children>
+      <BorderPane fx:id="backgroundPane" maxHeight="480.0" maxWidth="640.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0">
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="634.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="settingsImage" fitHeight="15.0" fitWidth="15.0" onMouseEntered="#settingsImageEnter" onMouseExited="#settingsImageExit" onMouseReleased="#settingsImageReleased" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="640" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView id="siegeLogo" fx:id="siegeLogo" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <ImageView fx:id="closeImage" fitHeight="15.0" fitWidth="15.0" onMouseEntered="#closeImageEnter" onMouseExited="#closeImageExit" onMouseReleased="#closeImageReleased" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Game Status" textAlignment="CENTER" textFill="#e8f1f2">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label id="statusLabel" fx:id="statusLabel" text="Stopped" textFill="#7a9e7e" />
+                        <Region maxHeight="1.0" prefHeight="1.0" prefWidth="200.0" />
+                        <Label text="Current Server" textAlignment="CENTER" textFill="#e8f1f2">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <HBox fx:id="choiceHBox" alignment="CENTER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <children>
+                              <ComboBox id="comboBox" fx:id="comboBox" prefWidth="150.0" promptText="Make a choice..." />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <VBox BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="DarkNeooo 2018" textAlignment="CENTER" textFill="#e8f1f2">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="playHbox" alignment="CENTER" prefHeight="100.0">
+                     <children>
+                        <Button id="playBtn" fx:id="playBtn" mnemonicParsing="false" onMouseReleased="#playBtnReleased" text="PLAY">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <AnchorPane fx:id="settingsShadowPane" disable="true" visible="false">
+         <children>
+            <BorderPane fx:id="settingsPane" layoutX="220.0" layoutY="140.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+               <center>
+                  <VBox BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="80.0" left="30.0" top="50.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <GridPane vgap="20.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Game Path:" textFill="#e8f1f2" GridPane.halignment="RIGHT">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="gamePathTextField" prefWidth="300.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Button fx:id="gamePathBrowseBtn" mnemonicParsing="false" onMouseReleased="#gamePathBrowseReleased" text="Browse" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <Label text="Settings Path:" textFill="#e8f1f2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="settingsPathTextField" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="settingsPathBrowse" mnemonicParsing="false" onMouseReleased="#settingsPathBrowseReleased" text="Browse" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </center>
+               <top>
+                  <Label text="SETTINGS" textFill="#e8f1f2" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <bottom>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Button fx:id="settingsOkBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseReleased="#settingsOkReleased" text="OK">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="settingsApplyBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseReleased="#settingsApplyReleased" text="Apply">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="settingsBackBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseReleased="#settingsBackReleased" text="Back">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="setupShadowPane" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <BorderPane fx:id="setupPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+               <top>
+                  <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" text="WELCOME" textFill="#e8f1f2">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Thank you for using my R6 Siege Launcher.  This wizard will help you with the setup." textFill="#e8f1f2">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="setupSettingsLabel" text="Placeholder" textFill="#e8f1f2" GridPane.hgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="setupSettingsTextField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                              <Button fx:id="setupSettingsBrowseBtn" disable="true" mnemonicParsing="false" onMouseReleased="#setupSettingsBrowseReleased" text="Browse" visible="false" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <Button fx:id="setupBrowseGameBtn" mnemonicParsing="false" onMouseReleased="#setupGameBrowseReleased" text="Browse" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <TextField fx:id="setupGameTextField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                              <Label fx:id="setupGameLabel" text="Please find your game executable" textFill="#e8f1f2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="20.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <Label fx:id="summaryLabel" text="Thanks, that's all. You can start using the launcher." textFill="#e8f1f2" visible="false">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+               <bottom>
+                  <HBox alignment="CENTER_RIGHT" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
+                     <children>
+                        <Button fx:id="continueBtn" disable="true" mnemonicParsing="false" onMouseReleased="#continueBtnReleased" text="Continue" visible="false">
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin></Button>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onMouseReleased="#cancelBtnRealeased" text="Cancel">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

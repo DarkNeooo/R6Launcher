@@ -1,0 +1,40 @@
+.label.running{
+    -fx-text-fill: red;
+}
+
+.label.stopped{
+    -fx-text-fill: #7a9e7e;
+}
+
+.combo-box .list-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: #e8f1f2;
+}
+
+.combo-box-popup .list-view{
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-view .list-cell:hover{
+    -fx-background-color: #7a9e7e;
+}
+
+.combo-box-base{
+    -fx-background-color: transparent;
+
+}
+
+.combo-box .arrow, .combo-box.arrow-button{
+    -fx-background-color: #7a9e7e;
+}
+
+.button {
+    -fx-background-color: #566a5f;
+    -fx-background-radius: 0,0,0,0;
+    -fx-text-fill: #e8f1f2;
+}
+
+.text-field {
+    -fx-background-color: #d3dcdc;
+    -fx-text-fill: #001a23;
+}
